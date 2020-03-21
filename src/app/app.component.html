@@ -1,0 +1,41 @@
+<p>Reactive form example - binding nested object to form using patchValue</p>
+
+<button (click)="reset()">reset</button>
+<button (click)="patchUser(1)">patch user 1</button>
+<button (click)="patchUser(2)">patch user 2</button>
+<button (click)="printModal()">Print Raw In Console</button>
+<hr>
+<form [formGroup]="form" (ngSubmit)="submit()">
+
+	<div formGroupName="user">
+		Name:
+		<input type="text" formControlName="name" required>
+
+		<br>
+  Email:
+		<input type="email" formControlName="email" required>
+
+		<br>
+  Age:
+		<input type="number" formControlName="age" required>
+
+		<br>
+  Gender:
+		<select formControlName="gender" required>
+    <option *ngFor="let item of genders" value="{{item.id}}">
+      {{item.label}}
+      </option>
+  </select>
+	</div>
+
+	<div formGroupName="address">
+		<br>
+    Address City:
+		<input type="text" formControlName="city" required>
+
+</div>
+
+
+		<hr>
+		<input type="submit">
+</form>
