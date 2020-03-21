@@ -24,7 +24,8 @@ export class AppComponent  {
       gender: 1
     },
     address: {
-      city: 'Mumbai'
+      city: 'Mumbai',
+      state: 'Maharashtra'
     }
   };
   user2 = {
@@ -49,7 +50,8 @@ export class AppComponent  {
         gender: ['', Validators.required],
       }),
       address: this.fb.group({
-        city: ['', Validators.required]
+        city: ['', Validators.required],
+        state: ['', Validators.required]
       })
     });
   }
@@ -66,6 +68,10 @@ export class AppComponent  {
 
   reset(){
     this.form.reset();
+  }
+
+  resetAddress(){
+    this.form.controls.address.reset();
   }
 
   patchUser(userId){

@@ -1,6 +1,7 @@
 <p>Reactive form example - binding nested object to form using patchValue</p>
 
-<button (click)="reset()">reset</button>
+<button (click)="reset()">reset all</button>
+<button (click)="resetAddress()">reset address</button>
 <button (click)="patchUser(1)">patch user 1</button>
 <button (click)="patchUser(2)">patch user 2</button>
 <button (click)="printModal()">Print Raw In Console</button>
@@ -29,9 +30,15 @@
 	</div>
 
 	<div formGroupName="address">
-		<br>
-    Address City:
+    <br>
+		Address 
+    <br>
+    City:
 		<input type="text" formControlName="city" required>
+
+    <br>
+    Address City:
+		<input type="text" formControlName="state" required>
 
 </div>
 
